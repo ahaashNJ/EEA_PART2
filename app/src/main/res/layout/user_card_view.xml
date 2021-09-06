@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="180dp"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+app:cardCornerRadius="12dp"
+app:cardElevation="6dp"
+app:cardUseCompatPadding="true"
+    >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/firstName"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/poppins_medium"
+        android:letterSpacing="0.075"
+        android:textColor="@color/primary"
+        android:textFontWeight="1000"
+        android:textSize="25dp"
+        android:text="Ahaash"
+        android:gravity="left"/>
+
+    <TextView
+        android:id="@+id/lastName"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/poppins_medium"
+        android:letterSpacing="0.075"
+        android:textColor="@color/primary"
+        android:textFontWeight="1000"
+        android:textSize="25dp"
+        android:text="Jayasinghe"
+        android:gravity="left"
+        android:layout_toRightOf="@+id/firstName"/>
+
+    <TextView
+        android:id="@+id/userType"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:fontFamily="@font/poppins_medium"
+        android:letterSpacing="0.0375"
+        android:textColor="@color/secondary_text"
+        android:textFontWeight="800"
+        android:textSize="20dp"
+        android:text="Lecturer"
+        android:gravity="left"
+        android:layout_marginTop="30dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/primary"
+        android:layout_marginTop="60dp" />
+
+    <TextView
+        android:id="@+id/emailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:fontFamily="@font/poppins_medium"
+        android:letterSpacing="0.0750"
+        android:textColor="@color/primary_text"
+        android:textFontWeight="1000"
+        android:textSize="18dp"
+        android:text="ahaashjayasinghe@gmail.com"
+        android:gravity="center"
+        android:layout_marginTop="70dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/contactNumber"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:fontFamily="@font/poppins_medium"
+        android:letterSpacing="0.0750"
+        android:textColor="@color/primary_text"
+        android:textFontWeight="1000"
+        android:textSize="18dp"
+        android:text="0777003134"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        />
+
+
+
+
+</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

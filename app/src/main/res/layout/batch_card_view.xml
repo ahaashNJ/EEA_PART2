@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    android:layout_marginBottom="20dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/batch"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.150"
+            android:textColor="@color/primary"
+            android:textFontWeight="1000"
+            android:textSize="30dp"
+            android:text="BATCH NAME"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primary"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+            android:id="@+id/startDate"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/secondary_text"
+            android:textFontWeight="1000"
+            android:textSize="20dp"
+            android:text="20/05/2020"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            />
+
+
+        <TextView
+            android:id="@+id/dashDate"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/secondary_text"
+            android:textFontWeight="1000"
+            android:textSize="15dp"
+            android:text="-"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@+id/startDate"
+            />
+
+        <TextView
+            android:id="@+id/endDate"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/secondary_text"
+            android:textFontWeight="1000"
+            android:textSize="20dp"
+            android:text="20/05/2023"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@+id/dashDate"
+            />
+
+        <TextView
+            android:id="@+id/startDateWord"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="1000"
+            android:textSize="15dp"
+            android:text="(Start Date)"
+            android:gravity="center"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="20dp"
+            />
+
+        <TextView
+            android:id="@+id/endDateWord"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="1000"
+            android:textSize="15dp"
+            android:text="(End Date)"
+            android:gravity="center"
+            android:layout_marginTop="80dp"
+            android:layout_toRightOf="@+id/dashDate"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

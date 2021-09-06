@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    tools:menu="@menu/module_options">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="16dp">
+
+
+
+        <TextView
+            android:id="@+id/moduleNames"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.150"
+            android:textColor="@color/primary"
+            android:textFontWeight="1000"
+            android:textSize="30dp"
+            android:text="MODULE NAME"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primary"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+            android:id="@+id/lecturerEmailWord"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="1000"
+            android:textSize="14sp"
+            android:text="Lecturer Email - "
+            android:gravity="left"
+            android:layout_marginTop="50dp"
+            />
+
+        <TextView
+            android:id="@+id/lecturerEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="1000"
+            android:textSize="14sp"
+            android:text="ahaashjaysinghe@gmail.com"
+            android:gravity="left"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@id/lecturerEmailWord"
+            />
+
+        <TextView
+            android:id="@+id/batchListWord"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="1000"
+            android:textSize="14dp"
+            android:text="Batch/Batches - "
+            android:gravity="left"
+            android:layout_marginTop="100dp"
+            />
+
+        <TextView
+            android:id="@+id/batchList"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="1000"
+            android:textSize="14dp"
+            android:text="adasdasd"
+            android:gravity="left"
+            android:layout_marginTop="100dp"
+            android:layout_toRightOf="@+id/batchListWord"
+            />
+
+<!--        <View-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:gravity="center"-->
+<!--            android:foregroundGravity="center"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:textColor="@color/secondary_text"-->
+<!--            android:background="@color/secondary_text"-->
+<!--            android:layout_marginTop="140dp"-->
+<!--            android:layout_marginLeft="75dp"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textFontWeight="800"-->
+<!--            android:letterSpacing="0.0750"-->
+<!--            android:elevation="1dp"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/scheduleLecture"-->
+<!--            android:layout_width="190dp"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:gravity="center"-->
+<!--            android:foregroundGravity="center"-->
+<!--            android:text="Call"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:textColor="@color/secondary_text"-->
+<!--            android:layout_marginTop="144dp"-->
+<!--            android:layout_marginLeft="80dp"-->
+<!--            android:textSize="15sp"-->
+<!--            android:textFontWeight="800"-->
+<!--            android:letterSpacing="0.0750"-->
+<!--            android:elevation="1dp"-->
+<!--            android:background="#fff"/>-->
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

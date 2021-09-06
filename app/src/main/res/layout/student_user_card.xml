@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/firstName"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.075"
+            android:textColor="@color/primary"
+            android:textFontWeight="1000"
+            android:textSize="25dp"
+            android:text="Ahaash"
+            android:gravity="left"/>
+
+        <TextView
+            android:id="@+id/lastName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.075"
+            android:textColor="@color/primary"
+            android:textFontWeight="1000"
+            android:textSize="25dp"
+            android:text="Jayasinghe"
+            android:gravity="left"
+            android:layout_toRightOf="@+id/firstName"/>
+
+        <TextView
+            android:id="@+id/userType"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0375"
+            android:textColor="@color/secondary_text"
+            android:textFontWeight="800"
+            android:textSize="13dp"
+            android:text="Student"
+            android:gravity="left"
+            android:layout_marginTop="30dp"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primary"
+            android:layout_marginTop="60dp" />
+
+        <TextView
+            android:id="@+id/batchIdWord"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0375"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="800"
+            android:textSize="15dp"
+            android:text="Batch -"
+            android:gravity="left"
+            android:layout_marginTop="70dp"
+
+            />
+
+        <TextView
+            android:id="@+id/batchId"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0375"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="800"
+            android:textSize="15dp"
+            android:text="HF2031SEENG"
+            android:gravity="left"
+            android:layout_marginTop="70dp"
+            android:layout_toRightOf="@+id/batchIdWord"/>
+
+        <TextView
+            android:id="@+id/emailAddressWord"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="1000"
+            android:textSize="15dp"
+            android:text="Email - "
+            android:gravity="left"
+            android:layout_marginTop="100dp"
+            />
+
+        <TextView
+            android:id="@+id/emailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="1000"
+            android:textSize="15dp"
+            android:text="ahaashjayasinghe@gmail.com"
+            android:gravity="left"
+            android:layout_marginTop="100dp"
+            android:layout_toRightOf="@+id/emailAddressWord"
+            />
+
+        <TextView
+            android:id="@+id/contactNumberWord"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="1000"
+            android:textSize="15dp"
+            android:text="Contact No. - "
+            android:gravity="left"
+            android:layout_marginTop="130dp"
+            />
+
+
+        <TextView
+            android:id="@+id/contactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/primary_text"
+            android:textFontWeight="1000"
+            android:textSize="15dp"
+            android:text="0777003134"
+            android:gravity="left"
+            android:layout_marginTop="130dp"
+            android:layout_toRightOf="@+id/contactNumberWord"
+            />
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/classroom_classroom"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.150"
+            android:textColor="@color/secondary_text"
+            android:textFontWeight="1000"
+            android:textSize="30dp"
+            android:text="CLASSROOM"
+            android:gravity="left"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primary"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+        android:id="@+id/numOfSeats"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/poppins_medium"
+        android:letterSpacing="0.0750"
+        android:textColor="@color/secondary_text"
+        android:textFontWeight="1000"
+        android:textSize="15dp"
+        android:text="Seats -"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        />
+
+        <TextView
+            android:id="@+id/numOfSeatsCount"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/secondary_text"
+            android:textFontWeight="1000"
+            android:textSize="15dp"
+            android:text="20"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@+id/numOfSeats"
+            />
+
+        <TextView
+            android:id="@+id/floor"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/secondary_text"
+            android:textFontWeight="1000"
+            android:textSize="15dp"
+            android:text="Floor -"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@+id/numOfSeatsCount"
+            android:layout_marginLeft="160dp"
+            />
+
+        <TextView
+            android:id="@+id/floorCount"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.0750"
+            android:textColor="@color/secondary_text"
+            android:textFontWeight="1000"
+            android:textSize="15dp"
+            android:text="3"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@+id/floor"
+            />
+
+        <View
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:foregroundGravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/secondary_text"
+            android:background="@color/secondary_text"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="75dp"
+            android:textSize="20sp"
+            android:textFontWeight="800"
+            android:letterSpacing="0.0750"
+            android:elevation="1dp"/>
+
+        <Button
+            android:id="@+id/deleteClassroom"
+            android:layout_width="190dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:foregroundGravity="center"
+            android:text="Delete"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/secondary_text"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="80dp"
+            android:textSize="15sp"
+            android:textFontWeight="800"
+            android:letterSpacing="0.0750"
+            android:elevation="1dp"
+            android:background="#fff"/>
+
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

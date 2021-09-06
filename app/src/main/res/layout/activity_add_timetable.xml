@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:paddingTop="0dp"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/Timetable_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:src="@drawable/timetable"
+            android:layout_marginLeft="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_regular"
+            android:text="TIMETABLE"
+            android:textColor="@color/secondary_text"
+            android:textSize="30sp"
+            android:layout_marginLeft="20dp"
+            android:letterSpacing="0.150"
+            android:textFontWeight="600"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="FOR"
+        android:textColor="@color/secondary_text"
+        android:textSize="10sp"
+        android:letterSpacing="0.150"
+        android:textFontWeight="600"
+        android:layout_gravity="center"
+        android:layout_marginTop="-10dp"/>
+
+    <TextView
+        android:id="@+id/ModuleNameTimetable"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="AM2"
+        android:textColor="@color/secondary_text"
+        android:textSize="20sp"
+        android:letterSpacing="0.075"
+        android:textFontWeight="900"
+        android:layout_gravity="center"
+        android:layout_marginTop="-12dp"
+        android:layout_marginBottom="50dp"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="550dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/batch_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="15dp"
+                android:text="Select Batch"
+                android:textColor="@color/primary_text" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="62dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
+
+                <Spinner
+                    android:id="@+id/batchNameLecture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Enter Batch Name"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="12sp" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/classroom_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="15dp"
+                android:text="Select Classroom"
+                android:textColor="@color/primary_text" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="62dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
+
+                <Spinner
+                    android:id="@+id/classroomNameLecture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Enter Classroom Name"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="12sp" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/DateLecture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="15dp"
+                android:text="Lecture Date"
+                android:textColor="@color/primary_text" />
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <DatePicker
+                    android:id="@+id/datePicker1"
+                    android:layout_width="250dp"
+                    android:layout_height="140dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner" />
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/datePicker1"
+                    android:layout_marginLeft="0dp"
+                    android:text="Get Date" />
+
+                <TextView
+                    android:id="@+id/DateTextLecture"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="145dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Lecture Date"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginRight="62dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
+
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/startDateText"-->
+                <!--                android:layout_width="150dp"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:background="@android:color/transparent"-->
+                <!--                android:fontFamily="@font/poppins_regular"-->
+                <!--                android:hint="Commencing Date"-->
+                <!--                android:inputType="textEmailAddress"-->
+                <!--                android:maxLines="1"-->
+                <!--                android:paddingLeft="17dp"-->
+                <!--                android:paddingTop="15dp"-->
+                <!--                android:paddingBottom="15dp"-->
+                <!--                android:textCursorDrawable="@drawable/cursor_color"-->
+                <!--                android:textSize="12sp"-->
+                <!--                />-->
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/concludingDate_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="15dp"
+                android:text="Start Time"
+                android:textColor="@color/primary_text" />
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TimePicker
+                    android:id="@+id/timePicker2"
+                    android:layout_width="250dp"
+                    android:layout_height="140dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:calendarViewShown="false"
+                    android:timePickerMode="spinner" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/timePicker2"
+                    android:layout_marginLeft="0dp"
+                    android:text="Get Time" />
+
+                <TextView
+                    android:id="@+id/startTimeTextLecture"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="150dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Start Time"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TimePicker
+                    android:id="@+id/timePicker3"
+                    android:layout_width="250dp"
+                    android:layout_height="140dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:calendarViewShown="false"
+                    android:timePickerMode="spinner" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/timePicker3"
+                    android:layout_marginLeft="0dp"
+                    android:text="Get Time" />
+
+                <TextView
+                    android:id="@+id/endTimeTextLecture"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="150dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="End Time"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="62dp"
+                android:layout_marginTop="18.7dp"
+                android:layout_marginRight="62dp"
+                android:background="@drawable/blue_fill__rounded_color"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:text="Schedule Lecture"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

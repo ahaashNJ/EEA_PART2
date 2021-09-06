@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="PANEL">
+
+            <menu>
+
+                <item
+                    android:id="@+id/NavBatches"
+                    android:title="Batches"
+                    android:icon="@drawable/batch" />
+
+                <item
+                    android:id="@+id/NavModules"
+                    android:title="Modules"
+                    android:icon="@drawable/course"/>
+
+                <item
+                    android:id="@+id/NavClasses"
+                    android:title="Classrooms"
+                    android:icon="@drawable/classroom"/>
+
+                <item
+                    android:id="@+id/NavUsers"
+                    android:title="Users"
+                    android:icon="@drawable/users"/>
+
+                <item
+                    android:id="@+id/NavTimetable"
+                    android:title="Timetable"
+                    android:icon="@drawable/nav_timetable"/>
+
+            </menu>
+
+        </item>
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="PROFILE">
+
+            <menu>
+
+        <item
+            android:id="@+id/MyAccount"
+            android:title="My Account"
+            android:icon="@drawable/my_account"/>
+
+            </menu>
+
+        </item>
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/Logout"
+            android:title="Logout"
+            android:icon="@drawable/logout"/>
+    </group>
+
+
+</menu>

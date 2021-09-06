@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="PROFILE">
+
+            <menu>
+
+                <item
+                    android:id="@+id/NavMyModules"
+                    android:title="My Modules"
+                    android:icon="@drawable/course"/>
+
+                <item
+                    android:id="@+id/NavMyAccount"
+                    android:title="My Account"
+                    android:icon="@drawable/my_account"/>
+
+            </menu>
+
+        </item>
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/Logout"
+            android:title="Logout"
+            android:icon="@drawable/logout"/>
+    </group>
+
+</menu>
