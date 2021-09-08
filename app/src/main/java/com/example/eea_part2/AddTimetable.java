@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -101,6 +102,21 @@ public class AddTimetable extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String sTime = startTime.getText().toString();
+                String eTime = endTime.getText().toString();
+                String dDate = Date.getText().toString();
+
+                if(TextUtils.isEmpty(dDate)){
+                    Toast.makeText(getApplicationContext(), "Select Date", Toast.LENGTH_LONG).show();
+                }
+                else if(TextUtils.isEmpty(sTime)){
+                    Toast.makeText(getApplicationContext(), "Select Start Time", Toast.LENGTH_LONG).show();
+                }
+                else if(TextUtils.isEmpty(eTime)){
+                    Toast.makeText(getApplicationContext(), "Select End Time", Toast.LENGTH_LONG).show();
+                }
+                else{
+
                 SharedPreferences preferences = getSharedPreferences("sharedPreference", Context.MODE_PRIVATE);
                 String name = preferences.getString("token", null);
                 String jwtToken = "Bearer " +name;
@@ -119,11 +135,6 @@ public class AddTimetable extends AppCompatActivity {
                 System.out.println(module.getBatchList());
 
 
-
-//                String[] batchString = new String[1];
-//                List<Batch> batches = module.getBatchList();
-//                batchString[0] = batches.toString();
-//                timetable.setBatchList(batchString);
 
 
                 CallAPI callAPI= API.getRetrofit().create(CallAPI.class);
@@ -148,6 +159,7 @@ public class AddTimetable extends AppCompatActivity {
                     }
                 });
 
+            }
             }
         });
 

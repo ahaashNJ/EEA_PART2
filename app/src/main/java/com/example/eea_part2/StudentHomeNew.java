@@ -20,6 +20,7 @@ import android.widget.Toolbar;
 import com.example.eea_part2.API.API;
 import com.example.eea_part2.API.CallAPI;
 import com.example.eea_part2.Adapter.StudentTimetableAdapter;
+import com.example.eea_part2.Adapter.TimetableNonAdminAdapter;
 import com.example.eea_part2.Model.Timetable;
 import com.google.android.material.navigation.NavigationView;
 
@@ -136,7 +137,7 @@ public class StudentHomeNew extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onResponse(Call<List<Timetable>> call, Response<List<Timetable>> response) {
                 List<Timetable> timetableList = response.body();
-                StudentTimetableAdapter studentTimetableAdapter = new StudentTimetableAdapter(timetableList);
+                TimetableNonAdminAdapter studentTimetableAdapter = new TimetableNonAdminAdapter(timetableList);
                 recyclerView.setAdapter(studentTimetableAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(StudentHomeNew.this));
 
