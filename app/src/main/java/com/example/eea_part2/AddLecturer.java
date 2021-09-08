@@ -59,6 +59,15 @@ public class AddLecturer extends AppCompatActivity {
                 else if(!(number.length() == 10)){
                     Toast.makeText(getApplicationContext(), "Contact Number should consist 10 digits", Toast.LENGTH_LONG).show();
                 }
+                else if(fName.length()>20){
+                    Toast.makeText(getApplicationContext(), "Maximum number of characters(20) exceeded for first Name", Toast.LENGTH_LONG).show();
+                }
+                else if(lName.length()>20){
+                    Toast.makeText(getApplicationContext(), "Maximum number of characters(20) exceeded for last Name", Toast.LENGTH_LONG).show();
+                }
+                else if(emailAddress.length()>30){
+                    Toast.makeText(getApplicationContext(), "Maximum number of characters(30) exceeded for last Name", Toast.LENGTH_LONG).show();
+                }
                 else{
                     SharedPreferences preferences = getSharedPreferences("sharedPreference", Context.MODE_PRIVATE);
                     String name = preferences.getString("token", null);

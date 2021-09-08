@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity{
 
                     @Override
                     public void onFailure(Call<JwtResponse> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Please Enter Valid Credentials", Toast.LENGTH_LONG).show();
                     }
 
                 });

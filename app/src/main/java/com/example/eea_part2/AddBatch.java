@@ -104,6 +104,9 @@ public class AddBatch extends AppCompatActivity {
                 else if(TextUtils.isEmpty(endDate)){
                     Toast.makeText(getApplicationContext(), "Select End Date", Toast.LENGTH_LONG).show();
                 }
+                else if(batchName.length()>15){
+                    Toast.makeText(getApplicationContext(), "Maximum number of characters(15) exceeded for module Name", Toast.LENGTH_LONG).show();
+                }
                 else{
                     SharedPreferences preferences = getSharedPreferences("sharedPreference", Context.MODE_PRIVATE);
                     String name = preferences.getString("token", null);

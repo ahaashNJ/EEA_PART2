@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="220dp"
+    android:layout_height="250dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="12dp"
     app:cardElevation="6dp"
@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="230dp"
         android:padding="16dp">
 
         <TextView
@@ -145,6 +145,38 @@
             android:layout_marginTop="130dp"
             android:layout_toRightOf="@+id/contactNumberWord"
             />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:foregroundGravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/primary"
+            android:background="@color/secondary_text"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="135dp"
+            android:textSize="20sp"
+            android:textFontWeight="800"
+            android:letterSpacing="0.0750"
+            android:elevation="1dp"/>
+
+        <Button
+            android:id="@+id/deleteStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:foregroundGravity="center"
+            android:text="Delete"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/primary"
+            android:layout_marginTop="165dp"
+            android:layout_marginLeft="141dp"
+            android:textSize="15sp"
+            android:textFontWeight="800"
+            android:letterSpacing="0.0750"
+            android:elevation="1dp"
+            android:background="#fff"/>
 
 
 

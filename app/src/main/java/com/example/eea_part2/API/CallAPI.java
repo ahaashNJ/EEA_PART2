@@ -99,6 +99,18 @@ public interface CallAPI {
     @DELETE("admin/deleteClassroom/{ClassroomID}")
     Call<Void> deleteClassroom(@Path("ClassroomID") String ClassroomID, @Header("Authorization")String Authorization);
 
+    @DELETE("admin/deleteBatch/{BatchID}")
+    Call<Void> deleteBatch(@Path("BatchID") Integer BatchID, @Header("Authorization")String Authorization);
+
+    @DELETE("admin/deleteModule/{ModuleID}")
+    Call<Void> deleteModule(@Path("ModuleID") String ModuleID, @Header("Authorization")String Authorization);
+
+    @DELETE("admin/deleteUser/{UserID}")
+    Call<Void> deleteUser(@Path("UserID") String UserID, @Header("Authorization")String Authorization);
+
+    @DELETE("admin/deleteTimetable/{timetableID}")
+    Call<Void> deleteTimetable(@Path("timetableID") String timetableID, @Header("Authorization")String Authorization);
+
 
 
 }

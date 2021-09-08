@@ -60,6 +60,9 @@ public class AddModule extends AppCompatActivity {
                 if(TextUtils.isEmpty(moduleName)){
                     Toast.makeText(getApplicationContext(), "Enter Module Name", Toast.LENGTH_LONG).show();
                 }
+                else if(moduleName.length()>40){
+                    Toast.makeText(getApplicationContext(), "Maximum number of characters(40) exceeded for module Name", Toast.LENGTH_LONG).show();
+                }
                 else{
                     SharedPreferences preferences = getSharedPreferences("sharedPreference", Context.MODE_PRIVATE);
                     String name = preferences.getString("token", null);

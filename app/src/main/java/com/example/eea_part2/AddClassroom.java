@@ -63,6 +63,9 @@ public class AddClassroom extends AppCompatActivity{
                 else if(floorNumber.length() > 2){
                     Toast.makeText(getApplicationContext(), "Please Enter a Number less than 10", Toast.LENGTH_LONG).show();
                 }
+                else if(classroomId.length()>3){
+                    Toast.makeText(getApplicationContext(), "Maximum number of characters(3) exceeded for Classroom ID", Toast.LENGTH_LONG).show();
+                }
                 else{
 
                     SharedPreferences preferences = getSharedPreferences("sharedPreference", Context.MODE_PRIVATE);

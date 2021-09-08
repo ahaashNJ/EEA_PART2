@@ -59,7 +59,7 @@ public class BatchList extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onResponse(Call<List<Batch>> call, Response<List<Batch>> response) {
                 List<Batch> batches = response.body();
-                ViewBatchAdapter viewBatchAdapter = new ViewBatchAdapter(batches);
+                ViewBatchAdapter viewBatchAdapter = new ViewBatchAdapter(batches, getApplicationContext());
                 recyclerView.setAdapter(viewBatchAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(BatchList.this));
 
