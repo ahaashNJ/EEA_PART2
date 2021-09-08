@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/ModuleName"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.150"
+            android:textColor="@color/secondary_text"
+            android:textFontWeight="1000"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/BatchName"
+            android:layout_width="2300dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ModuleName"
+            android:fontFamily="@font/poppins_medium"
+            android:text="BATCH"
+            android:textColor="@color/primary"
+            android:textFontWeight="800"
+            android:textSize="15dp"
+            android:gravity="right"
+            android:letterSpacing="0.075"/>
+
+        <TextView
+            android:id="@+id/LecturerName"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="46dp"
+            android:text=""
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="12dp"
+            android:textColor="@color/secondary_text"
+            android:textFontWeight="800"
+            android:letterSpacing="0.075"/>
+
+
+        <TextView
+            android:id="@+id/classroom"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:text="CLASSROOM"
+            android:layout_toEndOf="@+id/ModuleName"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/primary"
+            android:textFontWeight="800"
+            android:gravity="right"/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:text="DATE"
+            android:layout_toEndOf="@+id/ModuleName"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/primary"
+            android:textFontWeight="800"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/startTime"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@+id/LecturerName"
+            android:gravity="right"
+            android:text="start time "
+            android:fontFamily="@font/poppins_regular"
+            android:textFontWeight="800"
+            android:textSize="10dp"
+            android:textColor="@color/primary"
+            android:letterSpacing="0.150"/>
+
+        <TextView
+            android:id="@+id/endTime"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@+id/startTime"
+            android:gravity="right"
+            android:text="to  end time"
+            android:fontFamily="@font/poppins_regular"
+            android:textFontWeight="800"
+            android:textSize="10dp"
+            android:textColor="@color/primary"
+            android:letterSpacing="0.150"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
