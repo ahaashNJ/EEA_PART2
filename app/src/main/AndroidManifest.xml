@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StudentHomeNew"></activity>
+        <activity android:name=".AdminMyAccount"></activity>
+        <activity android:name=".LecturerMyAccount" />
+        <activity android:name=".StudentHomeNew" />
         <activity android:name=".MyAccount" />
         <activity android:name=".AddTimetable" />
         <activity android:name=".AddLectureTimetable" />

@@ -85,11 +85,18 @@ public class AdminHome extends AppCompatActivity implements View.OnClickListener
                         Toast.makeText(getApplicationContext(), "View Students", Toast.LENGTH_LONG).show();
                         break;
                     }
-                    case R.id.NavTimetable:{
+                    case R.id.NavTimetable: {
                         Intent intent = new Intent(AdminHome.this, TimetableAdmin.class);
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(), "All Lectures", Toast.LENGTH_LONG).show();
-                        break;}
+                        break;
+                    }
+                    case R.id.MyAccount: {
+                        Intent intent = new Intent(AdminHome.this, AdminMyAccount.class);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "My Account", Toast.LENGTH_LONG).show();
+                        break;
+                    }
 
                     case R.id.Logout:{
                         SharedPreferences preferences =getSharedPreferences("sharedPreference", Context.MODE_PRIVATE);

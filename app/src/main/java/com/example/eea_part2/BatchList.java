@@ -134,4 +134,10 @@ public class BatchList extends AppCompatActivity implements View.OnClickListener
         }
 
     }
+
+    public void onBackPressed() {
+        Intent intent = new Intent(this, AdminHome.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
 }

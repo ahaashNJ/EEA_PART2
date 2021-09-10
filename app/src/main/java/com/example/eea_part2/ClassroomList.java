@@ -106,4 +106,10 @@ public class ClassroomList extends AppCompatActivity implements View.OnClickList
 
     }
 
+    public void onBackPressed() {
+        Intent intent = new Intent(this, AdminHome.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
 }

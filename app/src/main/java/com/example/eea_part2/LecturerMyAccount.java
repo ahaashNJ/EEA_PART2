@@ -9,38 +9,27 @@ import android.widget.TextView;
 
 import com.example.eea_part2.API.API;
 import com.example.eea_part2.API.CallAPI;
-import com.example.eea_part2.Adapter.ViewClassroomAdapter;
-import com.example.eea_part2.Model.Classroom;
 import com.example.eea_part2.Model.UserDTO;
-
-import org.w3c.dom.Text;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MyAccount extends AppCompatActivity {
+public class LecturerMyAccount extends AppCompatActivity {
 
     TextView firstName, lastName, email, contactNumber, batch;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_account);
+        setContentView(R.layout.activity_lecturer_my_account);
 
         firstName = (TextView)findViewById(R.id.first_name_account);
         lastName = (TextView)findViewById(R.id.last_name_account);
         email = (TextView)findViewById(R.id.email_account);
         contactNumber = (TextView)findViewById(R.id.contact_number_account);
-        batch = (TextView)findViewById(R.id.batch_account);
-
-
     }
 
-    @Override
     protected void onStart() {
         super.onStart();
 
@@ -48,7 +37,7 @@ public class MyAccount extends AppCompatActivity {
         String name = preferences.getString("token", null);
         String jwtToken = "Bearer " +name;
 
-        Call<UserDTO> getMyAccount = API.getRetrofit().create(CallAPI.class).getMyAccount(jwtToken);
+        Call<UserDTO> getMyAccount = API.getRetrofit().create(CallAPI.class).getMyAccountLecturer(jwtToken);
         getMyAccount.enqueue(new Callback<UserDTO>() {
             @Override
             public void onResponse(Call<UserDTO> call, Response<UserDTO> response) {
@@ -57,7 +46,6 @@ public class MyAccount extends AppCompatActivity {
                 lastName.setText(userDTO.getLastName());
                 email.setText(userDTO.getEmail());
                 contactNumber.setText(userDTO.getContactNumber());
-                batch.setText(userDTO.getBatchId().getBatchName());
 
             }
 

@@ -96,6 +96,12 @@ public interface CallAPI {
     @GET("student/myAccount")
     Call<UserDTO> getMyAccount(@Header("Authorization")String Authorization);
 
+    @GET("student/myAccount")
+    Call<UserDTO> getMyAccountLecturer(@Header("Authorization")String Authorization);
+
+    @GET("student/myAccount")
+    Call<UserDTO> getMyAccountAdmin(@Header("Authorization")String Authorization);
+
     @DELETE("admin/deleteClassroom/{ClassroomID}")
     Call<Void> deleteClassroom(@Path("ClassroomID") String ClassroomID, @Header("Authorization")String Authorization);
 

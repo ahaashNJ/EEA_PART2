@@ -65,7 +65,7 @@ public class TimetableLecturer extends AppCompatActivity implements View.OnClick
                         break;
                     }
                     case R.id.NavMyAccount: {
-                        Intent intent = new Intent(TimetableLecturer.this, MyAccount.class);
+                        Intent intent = new Intent(TimetableLecturer.this, LecturerMyAccount.class);
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(), "My Account", Toast.LENGTH_LONG).show();
                         break;

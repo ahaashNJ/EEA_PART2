@@ -68,7 +68,7 @@ public class LecturerHome extends AppCompatActivity implements View.OnClickListe
                         break;
                     }
                     case R.id.NavMyAccount: {
-                        Intent intent = new Intent(LecturerHome.this, MyAccount.class);
+                        Intent intent = new Intent(LecturerHome.this, LecturerMyAccount.class);
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(), "My Account", Toast.LENGTH_LONG).show();
                         break;

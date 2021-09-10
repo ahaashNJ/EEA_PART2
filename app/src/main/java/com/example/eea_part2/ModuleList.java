@@ -94,4 +94,10 @@ public class ModuleList extends AppCompatActivity implements View.OnClickListene
             }
         }
     }
+
+    public void onBackPressed() {
+        Intent intent = new Intent(this, AdminHome.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
 }
