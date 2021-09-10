@@ -109,7 +109,16 @@ public interface CallAPI {
     Call<Void> deleteUser(@Path("UserID") String UserID, @Header("Authorization")String Authorization);
 
     @DELETE("admin/deleteTimetable/{timetableID}")
-    Call<Void> deleteTimetable(@Path("timetableID") String timetableID, @Header("Authorization")String Authorization);
+    Call<Void> deleteTimetable(@Path("timetableID") Integer timetableID, @Header("Authorization")String Authorization);
+
+    @GET("admin/searchBatch/{keyword}")
+    Call<List<Batch>> searchBatches(@Header("Authorization")String Authorization, @Path("keyword") String keyword);
+
+    @GET("admin/searchStudent/{keyword}")
+    Call<List<User>> searchStudents(@Header("Authorization")String Authorization, @Path("keyword") String keyword);
+
+    @GET("admin/searchLecturer/{keyword}")
+    Call<List<User>> searchLecturers(@Header("Authorization")String Authorization, @Path("keyword") String keyword);
 
 
 

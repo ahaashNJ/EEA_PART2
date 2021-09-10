@@ -104,7 +104,7 @@ app:cardUseCompatPadding="true"
         android:elevation="1dp"/>
 
     <Button
-        android:id="@+id/deleteLecturer"
+        android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:gravity="center"

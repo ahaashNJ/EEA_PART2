@@ -60,7 +60,7 @@ public class TimetableAdmin extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onResponse(Call<List<Timetable>> call, Response<List<Timetable>> response) {
                 List<Timetable> timetableList = response.body();
-                StudentTimetableAdapter studentTimetableAdapter = new StudentTimetableAdapter(timetableList);
+                StudentTimetableAdapter studentTimetableAdapter = new StudentTimetableAdapter(timetableList, getApplicationContext());
                 recyclerView.setAdapter(studentTimetableAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(TimetableAdmin.this));
 

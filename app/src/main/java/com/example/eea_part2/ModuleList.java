@@ -59,7 +59,7 @@ public class ModuleList extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onResponse(Call<List<ModuleDTO>> call, Response<List<ModuleDTO>> response) {
                 List<ModuleDTO> modules = response.body();
-                ViewModuleAdapter viewModuleAdapter = new ViewModuleAdapter(modules);
+                ViewModuleAdapter viewModuleAdapter = new ViewModuleAdapter(modules, getApplicationContext());
                 recyclerView.setAdapter(viewModuleAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(ModuleList.this));
 

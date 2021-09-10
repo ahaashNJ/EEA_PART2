@@ -11,6 +11,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.eea_part2.API.API;
@@ -29,6 +31,8 @@ public class ViewLecturers extends AppCompatActivity implements View.OnClickList
 
     RecyclerView recyclerView;
     public CardView c1, c2, c3;
+    ImageButton search;
+    EditText searchKeyword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,8 @@ public class ViewLecturers extends AppCompatActivity implements View.OnClickList
         c1 = (CardView) findViewById(R.id.StudentView);
         c2 = (CardView) findViewById(R.id.Lecturer);
         c3 = (CardView) findViewById(R.id.addLecturerView);
+        search = (ImageButton) findViewById(R.id.searchButton);
+        searchKeyword = (EditText)findViewById(R.id.searchLecturer);
 
         c1.setOnClickListener(this);
         c2.setOnClickListener(this);
@@ -61,7 +67,7 @@ public class ViewLecturers extends AppCompatActivity implements View.OnClickList
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                 List<User> userList = response.body();
-                ViewLecturerAdapter viewLecturerAdapter = new ViewLecturerAdapter(userList);
+                ViewLecturerAdapter viewLecturerAdapter = new ViewLecturerAdapter(userList, getApplicationContext());
                 recyclerView.setAdapter(viewLecturerAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(ViewLecturers.this));
 
@@ -71,6 +77,36 @@ public class ViewLecturers extends AppCompatActivity implements View.OnClickList
             public void onFailure(Call<List<User>> call, Throwable t) {
                 Toast.makeText(ViewLecturers.this, "Loading Unsuccessful", Toast.LENGTH_LONG).show();
                 System.out.println(t);
+            }
+        });
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences preferences = getSharedPreferences("sharedPreference", Context.MODE_PRIVATE);
+                String name = preferences.getString("token", null);
+                String jwtToken = "Bearer " +name;
+
+                Call<List<User>> getSearchLecturer = API.getRetrofit().create(CallAPI.class).searchLecturers(jwtToken, searchKeyword.getText().toString());
+                getSearchLecturer.enqueue(new Callback<List<User>>() {
+                    @Override
+                    public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                        if(response.isSuccessful()){
+                            List<User> userList = response.body();
+                            ViewLecturerAdapter viewLecturerAdapter = new ViewLecturerAdapter(userList, getApplicationContext());
+                            recyclerView.setAdapter(viewLecturerAdapter);
+                            recyclerView.setLayoutManager(new LinearLayoutManager(ViewLecturers.this));
+                        }
+                        else{
+                            Toast.makeText(ViewLecturers.this, "No items that matches Keyword"+searchKeyword.getText().toString(), Toast.LENGTH_LONG);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<User>> call, Throwable t) {
+                        Toast.makeText(ViewLecturers.this, "Loading Unsuccessful for " +searchKeyword.getText().toString(), Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
 

@@ -2,6 +2,7 @@ package com.example.eea_part2.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -16,8 +17,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.eea_part2.API.API;
+import com.example.eea_part2.API.CallAPI;
 import com.example.eea_part2.AddModule;
 import com.example.eea_part2.AddTimetable;
+import com.example.eea_part2.BatchList;
 import com.example.eea_part2.Model.Batch;
 import com.example.eea_part2.Model.Module;
 import com.example.eea_part2.Model.ModuleDTO;
@@ -30,19 +34,25 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ViewModuleAdapter extends RecyclerView.Adapter<ViewModuleAdapter.ViewHolder>{
 
     List<ModuleDTO> moduleList;
     Context context;
     List<Batch> list = new ArrayList<>();
+    SharedPreferences sharedPreference;
 
-    public ViewModuleAdapter(List<ModuleDTO> moduleList) {
+
+    public ViewModuleAdapter(List<ModuleDTO> moduleList, Context context) {
         this.moduleList = moduleList;
+        this.context = context;
+        this.sharedPreference = context.getSharedPreferences("sharedPreference", Context.MODE_PRIVATE);
+
     }
 
-    public ViewModuleAdapter(Context context) {
-        this.context = context;
-    }
 
     @NonNull
     @Override
@@ -84,6 +94,34 @@ public class ViewModuleAdapter extends RecyclerView.Adapter<ViewModuleAdapter.Vi
             }
         });
 
+        holder.deleteModule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = sharedPreference.getString("token", null);
+                String jwtToken = "Bearer " +name;
+
+                Call<Void> deleteModule = API.getRetrofit().create(CallAPI.class).deleteBatch(module.getModuleId(), jwtToken);
+
+                deleteModule.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        if(response.isSuccessful()){
+                            Intent intent = new Intent(view.getContext(), ModuleList.class);
+                            context.startActivity(intent);
+                            Toast.makeText(context, "Module Successfully Deleted", Toast.LENGTH_LONG).show();
+                        }
+                        else{
+                            Toast.makeText(context, "Cannot Delete Module", Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+                        Toast.makeText(context, "Error Occurred While Deleting", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        });
     }
 
     @Override
@@ -97,6 +135,7 @@ public class ViewModuleAdapter extends RecyclerView.Adapter<ViewModuleAdapter.Vi
         TextView lecturerEmail;
         TextView batchList;
         Button scheduleLecture;
+        Button deleteModule;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -104,7 +143,7 @@ public class ViewModuleAdapter extends RecyclerView.Adapter<ViewModuleAdapter.Vi
             lecturerEmail = itemView.findViewById(R.id.lecturerEmail);
             batchList = itemView.findViewById(R.id.batchList);
             scheduleLecture = itemView.findViewById(R.id.scheduleLecture);
-
+            deleteModule = itemView.findViewById(R.id.deleteModule);
         }
 
     }

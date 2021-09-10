@@ -10,12 +10,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.eea_part2.API.API;
 import com.example.eea_part2.API.CallAPI;
 import com.example.eea_part2.Adapter.StudentTimetableAdapter;
 import com.example.eea_part2.Adapter.ViewStudentsAdapter;
+import com.example.eea_part2.Model.Batch;
 import com.example.eea_part2.Model.Timetable;
 import com.example.eea_part2.Model.User;
 
@@ -29,6 +32,8 @@ public class ViewStudents extends AppCompatActivity implements View.OnClickListe
 
     RecyclerView recyclerView;
     public CardView c1, c2, c3;
+    ImageButton search;
+    EditText searchKeyword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,8 @@ public class ViewStudents extends AppCompatActivity implements View.OnClickListe
         c1 = (CardView) findViewById(R.id.StudentView);
         c2 = (CardView) findViewById(R.id.Lecturer);
         c3 = (CardView) findViewById(R.id.addStudentView);
+        search = (ImageButton) findViewById(R.id.searchButton);
+        searchKeyword = (EditText)findViewById(R.id.searchStudent);
 
         c1.setOnClickListener(this);
         c2.setOnClickListener(this);
@@ -61,7 +68,7 @@ public class ViewStudents extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                 List<User> userList = response.body();
-                ViewStudentsAdapter viewStudentsAdapter = new ViewStudentsAdapter(userList);
+                ViewStudentsAdapter viewStudentsAdapter = new ViewStudentsAdapter(userList, getApplicationContext());
                 recyclerView.setAdapter(viewStudentsAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(ViewStudents.this));
 
@@ -71,6 +78,37 @@ public class ViewStudents extends AppCompatActivity implements View.OnClickListe
             public void onFailure(Call<List<User>> call, Throwable t) {
                 Toast.makeText(ViewStudents.this, "Loading Unsuccessful", Toast.LENGTH_LONG).show();
                 System.out.println(t);
+            }
+        });
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences preferences = getSharedPreferences("sharedPreference", Context.MODE_PRIVATE);
+                String name = preferences.getString("token", null);
+                String jwtToken = "Bearer " +name;
+
+                Call<List<User>> getSearchStudents = API.getRetrofit().create(CallAPI.class).searchStudents(jwtToken, searchKeyword.getText().toString());
+                getSearchStudents.enqueue(new Callback<List<User>>() {
+                    @Override
+                    public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                        if(response.isSuccessful()){
+                            List<User> userList = response.body();
+                            ViewStudentsAdapter viewStudentsAdapter = new ViewStudentsAdapter(userList, getApplicationContext());
+                            recyclerView.setAdapter(viewStudentsAdapter);
+                            recyclerView.setLayoutManager(new LinearLayoutManager(ViewStudents.this));
+                        }
+                        else{
+                            Toast.makeText(ViewStudents.this, "No items that matches Keyword"+searchKeyword.getText().toString(), Toast.LENGTH_LONG);
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<User>> call, Throwable t) {
+                        Toast.makeText(ViewStudents.this, "Loading Unsuccessful for " +searchKeyword.getText().toString(), Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
 
