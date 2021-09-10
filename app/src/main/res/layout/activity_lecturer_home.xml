@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentHome"
+    tools:context=".LecturerHome"
     android:orientation="vertical"
-    android:fitsSystemWindows="true"
     android:id="@+id/drawer_layout"
     >
 
@@ -28,9 +27,24 @@
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".StudentHome"
+            tools:context=".LecturerHome"
             android:orientation="vertical"
             >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="TODAY"
+                android:textColor="@color/secondary_text"
+                android:textSize="15sp"
+                android:letterSpacing="0.150"
+                android:textFontWeight="600"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="-10dp"
+
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,7 +52,7 @@
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
                 android:paddingTop="0dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="5dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="50dp"
                 >
@@ -48,17 +62,17 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/course"
-                    android:layout_marginLeft="20dp" />
+                    android:src="@drawable/timetable"
+                    android:layout_marginLeft="40dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/poppins_regular"
-                    android:text="MY MODULES"
+                    android:text="TIMETABLE"
                     android:textColor="@color/secondary_text"
-                    android:textSize="30sp"
+                    android:textSize="25sp"
                     android:layout_marginLeft="20dp"
                     android:letterSpacing="0.150"
                     android:textFontWeight="600"
@@ -69,7 +83,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewStudent"
                 android:layout_width="match_parent"
-                android:layout_height="570dp"/>
+                android:layout_height="490dp"/>
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -79,9 +93,88 @@
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false">
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/StudentToday"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="20dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <ImageView
+                            android:id="@+id/todayImage"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/today"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="85dp"
+                            android:layout_marginTop="-10dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TODAY"
+                            android:textSize="15sp"
+                            android:textColor="@color/secondary_text"
+                            android:textFontWeight="800"
+                            android:letterSpacing="0.125"
+                            android:gravity="center"
+                            android:background="#fff"
+                            android:layout_marginTop="50dp"
+                            android:layout_marginLeft="-120dp"
+                            />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/StudentAll"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="20dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <ImageView
+                            android:id="@+id/EverydayImage"
+                            android:layout_width="50dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/everyday"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="85dp"
+                            android:layout_marginTop="-10dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ALL"
+                            android:textSize="15sp"
+                            android:textColor="@color/secondary_text"
+                            android:textFontWeight="800"
+                            android:letterSpacing="0.125"
+                            android:gravity="center"
+                            android:background="#fff"
+                            android:layout_marginTop="50dp"
+                            android:layout_marginLeft="-120dp"
+                            />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </GridLayout>
-
 
         </LinearLayout>
 

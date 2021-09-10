@@ -62,36 +62,18 @@ public class StudentHomeNew extends AppCompatActivity implements View.OnClickLis
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()){
-                    case R.id.NavBatches:{
-                        Intent intent = new Intent(StudentHomeNew.this, BatchList.class);
+                    case R.id.NavMyModules:{
+                        Intent intent = new Intent(StudentHomeNew.this, MyModulesStudent.class);
                         startActivity(intent);
-                        Toast.makeText(getApplicationContext(), "All Batches", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "My Modules", Toast.LENGTH_LONG).show();
                         break;
                     }
-                    case R.id.NavModules: {
-                        Intent intent = new Intent(StudentHomeNew.this, ModuleList.class);
+                    case R.id.NavMyAccount: {
+                        Intent intent = new Intent(StudentHomeNew.this, MyAccount.class);
                         startActivity(intent);
-                        Toast.makeText(getApplicationContext(), "All Modules", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "My Account", Toast.LENGTH_LONG).show();
                         break;
                     }
-                    case R.id.NavClasses: {
-                        Intent intent = new Intent(StudentHomeNew.this, ClassroomList.class);
-                        startActivity(intent);
-                        Toast.makeText(getApplicationContext(), "All Classrooms", Toast.LENGTH_LONG).show();
-                        break;
-                    }
-                    case R.id.NavUsers: {
-                        Intent intent = new Intent(StudentHomeNew.this, ViewStudents.class);
-                        startActivity(intent);
-                        Toast.makeText(getApplicationContext(), "View Students", Toast.LENGTH_LONG).show();
-                        break;
-                    }
-                    case R.id.NavTimetable:{
-                        Intent intent = new Intent(StudentHomeNew.this, TimetableAdmin.class);
-                        startActivity(intent);
-                        Toast.makeText(getApplicationContext(), "All Lectures", Toast.LENGTH_LONG).show();
-                        break;}
-
                     case R.id.Logout:{
                         SharedPreferences preferences =getSharedPreferences("sharedPreference", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();

@@ -37,13 +37,13 @@ public interface CallAPI {
     Call<List<ModuleDTO>> getMyModulesStudent(@Header("Authorization")String Authorization);
 
     @GET("lecturer/getAllLecturerTimetable")
-    Call<List<User>> getAllLecturesLecturer(@Header("Authorization")String Authorization);
+    Call<List<Timetable>> getAllLecturesLecturer(@Header("Authorization")String Authorization);
 
     @GET("lecturer/getTodayTimetableLecturer")
-    Call<List<User>> getTodayLecturerTimetable(@Header("Authorization")String Authorization);
+    Call<List<Timetable>> getTodayLecturerTimetable(@Header("Authorization")String Authorization);
 
     @GET("lecturer/viewMyModulesLecturer")
-    Call<List<Module>> getMyModulesLecturer(@Header("Authorization")String Authorization);
+    Call<List<ModuleDTO>> getMyModulesLecturer(@Header("Authorization")String Authorization);
 
     @GET("admin/viewBatchesMobile")
     Call<List<Batch>> getAllBatches(@Header("Authorization") String Authorization);
